@@ -1,0 +1,18 @@
+<h1>List <strong><%=@list.name%></h1></strong>
+
+
+<%= link_to "<- Get back to full list", lists_path %>
+<%= link_to "Add a movie to your list", new_list_bookmark_path(@list) %>
+
+<div class="container row">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="cards col">
+      <h3><%= Movie.find(bookmark.movie_id).title %></h3>
+      <%=image_tag Movie.find(bookmark.movie_id).poster_url, alt: "Le Wagon", width: 200 %>
+      <div>Comment: <%= bookmark.comment %></div>
+        <i class="fa-solid fa-star" style="color: #e1b741;"></i>
+        <%= Movie.find(bookmark.movie_id).rating.round(2) %>
+        <div class="d-flex justify-content-start"><%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: 'delete', turbo_confirm: 'are your sure ?' } %></div>
+    </div>
+  <%end%>
+</div>
