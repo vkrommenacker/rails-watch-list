@@ -1,4 +1,9 @@
+
+<div class="banner"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key %>')"
+>
 <h1>List <strong><%=@list.name%></h1></strong>
+</div>
 
 
 <%= link_to "<- Get back to full list", lists_path, class: "btn btn-flat"  %>

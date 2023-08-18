@@ -1,12 +1,14 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1625&q=80);">
  <h1 class="text-center">Your movie list !</h1>
 </div>
-</div>
-<ul>
+
+<div class="cards">
   <% @lists.each do |list|%>
-      <li><%= link_to list.name, list_path(list.id)%></li>
+    <div class="card" style="url('<%= cl_image_path list.photo.key %>')">
+      <%= link_to list.name, list_path(list.id), class: "list"%>
+    </div>
   <%end%>
-</ul>
+</div>
 
 <div>
   <%= link_to "Add a list", new_list_path, class: "btn btn-flat" %>
