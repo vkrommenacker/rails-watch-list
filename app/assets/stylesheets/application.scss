@@ -12,5 +12,54 @@
 @import "pages/index";
 
 .container {
-  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
 }
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 5px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+
+.card-product .delete {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 20px;
+  padding: 16px;
+}
+
+h3 {
+  padding-top: 10px;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+

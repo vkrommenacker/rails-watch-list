@@ -1,18 +1,22 @@
 <h1>List <strong><%=@list.name%></h1></strong>
 
 
-<%= link_to "<- Get back to full list", lists_path %>
-<%= link_to "Add a movie to your list", new_list_bookmark_path(@list) %>
+<%= link_to "<- Get back to full list", lists_path, class: "btn btn-flat"  %>
+<%= link_to "Add a movie to your list", new_list_bookmark_path(@list), class: "btn btn-flat" %>
 
-<div class="container row">
+<div class="container">
   <% @list.bookmarks.each do |bookmark| %>
-    <div class="cards col">
       <h3><%= Movie.find(bookmark.movie_id).title %></h3>
+    <div class="card-product">
       <%=image_tag Movie.find(bookmark.movie_id).poster_url, alt: "Le Wagon", width: 200 %>
-      <div>Comment: <%= bookmark.comment %></div>
-        <i class="fa-solid fa-star" style="color: #e1b741;"></i>
-        <%= Movie.find(bookmark.movie_id).rating.round(2) %>
-        <div class="d-flex justify-content-start"><%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: 'delete', turbo_confirm: 'are your sure ?' } %></div>
+      <div class="card-product-infos">
+        <h4>Comment: <%= bookmark.comment %></h4>
+            <i class="fa-solid fa-star" style="color: #e1b741;"></i>
+            <%= Movie.find(bookmark.movie_id).rating.round(2) %>
+            <div class="delete">
+              <%= link_to "delete", bookmark_path(bookmark), data: { turbo_method: 'delete', turbo_confirm: 'are your sure ?' }, class: "btn btn-flat"  %>
+            </div>
+      </div>
     </div>
   <%end%>
 </div>
