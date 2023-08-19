@@ -2,14 +2,16 @@
  <h1 class="text-center">Your movie list !</h1>
 </div>
 
-<div class="cards">
-  <% @lists.each do |list|%>
-    <div class="card" style="url('<%= cl_image_path list.photo.key %>')">
-      <%= link_to list.name, list_path(list.id), class: "list"%>
-    </div>
-  <%end%>
+<div class="d-flex justify-content-center">
+  <%= link_to "Add a list", new_list_path, class: "btn btn-flat text-center" %>
 </div>
 
-<div>
-  <%= link_to "Add a list", new_list_path, class: "btn btn-flat" %>
+<div class="cards">
+  <% @lists.each do |list|%>
+
+<div class="card bg-image d-flex justify-content-center align-items-center"
+style="background-image: url('<%= cl_image_path list.photo.key %>')"
+     <h4> <%= link_to list.name.capitalize, list_path(list.id), class: "list", target: "_blank"%> </h4>
+    </div>
+  <%end%>
 </div>

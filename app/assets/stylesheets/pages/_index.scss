@@ -14,28 +14,4 @@
   font-weight: bold;
 }}
 
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #670BFF;
-  transition: background 0.3s ease;
-}
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-  margin: 16px;
-}
-
-.card-category{
-  position: relative;
-  .list {
-    position: absolute;
-    align-content: center;
-    object-fit: cover;
-
-
-  }
-}

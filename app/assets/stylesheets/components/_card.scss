@@ -1,5 +1,19 @@
-.card {
-  height: 150px;
-  width: 300px;
-  object-fit: fill;
-}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 16px;
+
+  .card {
+    height: 150px;
+    width: auto;
+    object-fit: fill;
+    margin: 16px;
+    align-items: center;
+
+    .list {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: blueviolet
+  }}}}
